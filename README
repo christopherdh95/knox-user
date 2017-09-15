@@ -1,0 +1,9 @@
+daemon_cmd = format('{knox_bin} stop')
+5	    update_knox_logfolder_permissions()
+6	    try:
+7	        Execute(daemon_cmd, environment={'JAVA_HOME': params.java_home, }, user=params.knox_user)
+…	
+8	    except:
+9	        show_logs(params.knox_logs_dir, params.knox_user)
+10	        raise
+11	    File(params.knox_pid_file, action='delete
